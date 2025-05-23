@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript" /> 
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="title" content="" />
+  <meta name="description" content="" />
+  
+  <title>Qi Chen's Homepage</title>
+  
+  <!-- Included CSS Files -->
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/prettyPhoto.css" rel="stylesheet"  type="text/css" media="screen" title="prettyPhoto main stylesheet" />
+
+  <!-- Included Java Script Files -->
+  <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+  <script type="text/javascript" src="js/cufon-yui.js"></script>
+  <script type="text/javascript" src="js/Maven_Pro_400.font.js"></script>
+  <script type="text/javascript" src="js/Quicksand_Book_400.font.js"></script>
+  <script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+  <script type="text/javascript" src="js/fade.js"></script>
+  <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+  <script type="text/javascript" src="js/contact.js"></script>
+  <script type="text/javascript">
+	Cufon.replace('#menu li', {fontFamily: 'Maven Pro', hover:true});
+	Cufon.replace('h1, h2, h3, h4, h5, h6',  {fontFamily: 'Maven Pro', hover:true});
+	Cufon.replace('.pagetitle', {fontFamily: 'Quicksand Book', hover:true});
+	Cufon.replace('.headingsmall, .customquote, .boldtext', {fontFamily: 'Maven Pro'});
+  </script>
+  
+  <script type="text/javascript">
+  var $jts = jQuery.noConflict();
+  $jts(function() {
+  
+        // maincontent cycle
+	$jts('#maincontent').cycle({
+            fx:             'blindY',
+            speed:          'slow',
+            timeout:        0,
+	    cleartype:      true,
+            cleartypeNoBg:  true, 
+            pager:          '#menu',
+	    startingSlide : 0,
+	    after:          onAfter,
+	    pagerAnchorBuilder: function(idx, slide) {
+                return '#menu li:eq(' + (idx) + ') a';
+            }
+        });
+	
+	function onAfter(curr, next, opts, fwd){
+	    //get the height of the current slide
+	    var $ht =  $jts(this).height();
+		
+	    Cufon.refresh();
+		
+	    //set the container's height to that of the current slide
+	    $jts(this).parent().animate({height: $ht});
+	}
+	
+	Cufon.refresh();
+	
+	 //portfolio gallery 
+	$jts("a[rel^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',slideshow:2000,allow_resize:true,default_width:500,default_height:500});
+  });
+        
+  </script>
+  <style>
+      a:link {
+          text-decoration: underline;
+      }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="container">
+		<div id="top">
+			<div id="logo"><figure><a href="index.html"><img src="images/smallphoto.jpg" alt="" /></a></figure></div>
+		</div>
+		
+		<div id="content">
+			<div id="side">
+				<div id="mainmenu">
+					<ul id="menu">
+						<li><a href="#">About Me</a></li>
+						<li><a href="#">Publications</a></li>
+						<li><a href="#">Experience</a></li>
+						<li><a href="#">Awards</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="main">
+			<div id="maincontent">
+				
+				<!-- PAGE 1-->
+				<div class="page" id="page1">
+					<h1 class="pagetitle">Qi Chen</h1>
+                    <p> I am currently a principal researcher at <a href="https://www.microsoft.com/en-us/research/group/microsoft-research-asia-vancouver/" target="_blank">Microsoft Research Asia Vancouver</a>. I obtained my Bachelor's and Ph.D. degrees from the School of Computer Science at Peking University, under the guidance of Professor Zhen Xiao. From 2013 to 2014, I worked as a visiting student under the supervision of Professor Jinyang Li at the System Group of New York University. I am a recipient of the OSDI'20 Jay Lepreau Best Paper Award and the NeurIPS'22 Outstanding Paper Award. My current research interests include distributed systems, cloud computing, vector databases, deep learning algorithms and artificial intelligence systems.</p>
+
+					<h3>Contact Me</h3>
+					<p>
+                    Email: cheqi at microsoft.com / chenqi871025 at hotmail.com<br/>
+                    <a href="https://scholar.google.com/citations?user=5e_o4XUAAAAJ&hl=zh-CN" target="_blank">Google Scholoar</a><br/>
+                    <p/>
+                    <h3>News</h3>
+                    <ul>
+                        <li><b>2025/05</b> Velocitune got accepted at ACL 2025.</li>
+                        <li><b>2025/05</b> EpiCoder got accepted at ICML 2025.</li>
+                        <li><b>2025/04</b> Gradient-Based Parameter Selection got accepted at AAAI 2025. <b>Oral Presentation</b></li>
+                        <li><b>2025/01</b> Integrative Decoding got accepted at ICLR 2025.</li>
+                        <li><b>2024/11</b> RetrievalAttention got accepted at ENLSP NeurIPS Workshop. <b>Best Paper Award</b></li>
+                        <li><b>2024/10</b> IRGen got accepted at ECCV 2024.</li>
+                        <li><b>2024/08</b> AndroidArena got accepted at SIGKDD 2024. </li>
+                        <li><b>2024/05</b> MS MARCO Web Search got accepted at ACM The Web Conference 2024.</li>
+                        <li><b>2024/05</b> OneSparse got accepted at ACM The Web Conference 2024. <b>Oral Presentation</b></li>
+                        <li><b>2023/10</b> Model-enhanced Vector Index got accepted at NeurIPS 2023.</li>
+                        <li><b>2023/10</b> LUT-NN got accepted at MobiCom 2023.</li>
+                        <li><b>2023/10</b> SPFresh got accepted at SOSP 2023.</li>
+                        <li><b>2023/07</b> VBASE got accepted at OSDI 2023.</li>
+                        <li><b>2023/05</b> FrozenHot Cache got accepted at EuroSys 2023.</li>
+                        <li><b>2022/11</b> Neural Corpus Indexer got accepted at NeurIPS 2022. <b>Outstanding Paper Award</b></li>
+                        <li><b>2022/04</b> Distill-VQ got accepted at SIGIR 2022.</li>
+                        <li><b>2021/11</b> GLOW got accepted at Big Data 2021.</li>
+                        <li><b>2021/11</b> SPANN got accepted at NeurIPS 2021. <b>Spotlight Presentation</b></li>
+                        <li><b>2021/04</b> Match Plan Generation got accepted at The Web Conference 2021.</li>
+                        <li><b>2020/10</b> Pompe got accepted at OSDI 2020. <b>Jay Lepreau Best Paper Award</b></li>
+                        <li><b>2020/07</b> AutoSys got accepted at ATC 2020.</li>
+                        <li><b>2019/11</b> Collaborative Learning got accepted at ACM Symposium on Edge Computing 2019.</li>
+                        <li><b>2018/12</b> Balanced Clustering got accepted at Big Data 2018.</li>
+                        <li><b>2018/11</b> Auto-Dialabel got accepted at EMNLP 2018.</li>
+                    </ul>
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Program Committee/Reviewer of NeurIPS (2022, 2023, 2024, 2025), ICLR (2024, 2025), ICML (2024, 2025), AAAI (2025), The Web Conference (2025), OSDI (2025), SIGIR-AP (2024), ChinaSys (2024)</li>
+                        <li> Journal Reviewer of IEEE TPAMI, IEEE TC, ACM TODS. </li>
+                        <li> Keynote speaker of SIGIR 2024 ReNeuIR workshop. </li>
+                        <li> Panel speaker of CCF "The Beauty of Computing" Conference 2021. </li>
+                        <li> Panel speaker of Ada Workshop in ISSTA 2019. </li>
+                        <li> Organizing committee of Ada Workshop in SOSP 2017. </li>
+                    </ul>
+				</div><!-- end #page1 -->
+				
+				<!-- PAGE 2-->
+				<div class="page" id="page2">
+					<h1 class="pagetitle">Publications</h1>
+					<p>Here is the link to my <a href="https://scholar.google.com/citations?user=5e_o4XUAAAAJ&hl=zh-CN">Google Scholar</a> which summarizes the latest publications and citations.</p>
+					<ol class="list-row">
+					<li>Z. Luo, X. Zhang, X. Liu, H. Li, Y. Gong, <b>Q. Chen</b>, and P. Cheng. “Velocitune: A Velocity-based Dynamic Domain Reweighting Method for Continual Pre-training”, <i>ACL 2025</i>.</li>
+					<li>Y. Wang, H. Li, X. Zhang, J. Wu, X. Liu, W. Hu, Z. Guo, Y. Huang, Y. Xin, Y. Yang, J. Su, <b>Q. Chen</b>, S. Li. “EpiCoder: Encompassing Diversity and Complexity in Code Generation”, <i>ICML 2025</i>.</li>
+					<li>H. Li, X. Zhang, X. Liu, Y. Gong, Y. Wang, <b>Q. Chen</b>, and P. Cheng. “Enhancing Large Language Model Performance with Gradient-Based Parameter Selection”, <i>AAAI 2025</i>. <b>Oral Presentation</b></li>
+					<li>Y. Cheng, X. Liang, Y.Gong, W. Xiao, S. Wang, Y. Zhang, W. Hou, K. Xu, W. Liu, W. Li, J. Jiao, <b>Q. Chen</b>, P. Cheng, and W. Xiong. “Integrative Decoding: Improve Factuality via Implicit Self-consistency”, <i>ICLR 2025</i>.</li>
+					<li>D. Liu, M. Chen, B. Lu, H. Jiang, Z. Han, Q. Zhang, <b>Q. Chen</b>, C. Zhang, B. Ding, K. Zhang, and C. Chen. “RetrievalAttention: Accelerating long-context LLM inference via vector retrieval”, <i>ENLSP NeurIPS Workshop 2024</i>. <b>Best Paper Award</b></li>
+					<li>Y. Zhang, T. Zhang, D. Chen, Y. Wang, <b>Q. Chen</b>, X. Xie, H. Sun, W. Deng, Q. Zhang, F. Yang, M. Yang, Q. Liao, J. Wang, B. Guo. “Irgen: Generative modeling for image retrieval”. <i>ECCV 2024</i>.</li>
+					<li>M. Xing, R. Zhang, H. Xue, <b>Q. Chen</b>, F. Yang, Z. Xiao. “Understanding the weakness of large language model agents within a complex android environment”. <i>ACM SIGKDD 2024</i>.</li>
+					<li><b>Q. Chen</b>, X. Geng, C. Rosset, C. Buractaon, J. Lu, T. Shen, K. Zhou, C. Xiong, Y. Gong, P. Bennett, N. Craswell, X. Xie, F. Yang, B. Tower, N. Rao, ..., and Zhang, C. “MS MARCO Web Search: a Large-scale Information-rich Web Dataset with Millions of Real Click Labels”. <i>ACM Web Conference 2024</i>.</li>
+					<li>Y. Chen, R. Zheng, <b>Q. Chen</b>*, S. Xu, Q. Zhang, X. Wu, W. Han, H. Yuan, M. Li, Y. Wang, J. Li, F. Yang, H. Sun, W. Deng, F. Sun, Q. Zhang, and M. Yang. “OneSparse: A Unified System for Multi-index Vector Search”. <i>ACM Web Conference 2024</i>. <b>Oral Presentation</b></li>
+					<li>H. Zhang, Y. Wang, <b>Q. Chen</b>, R. Chang, T. Zhang, Z. Miao, Y. Hou, Y. Ding, X. Miao, H. Wang, B. Pang, Y. Zhan, H. Sun, W. Deng, Q. Zhang, F. Yang, X. Xie, M. Yang, and B. Cui. “Model-enhanced Vector Index”. <i>NeurIPS 2023</i>.</li>
+					<li>Y. Xu, H. Liang, J. Li, S. Xu, <b>Q. Chen</b>*, Q. Zhang, C. Li*, Z. Yang, F. Yang, Y. Yang, P. Cheng, M. Yang.  “SPFresh: Incremental In-Place Update for Billion-Scale Vector Search”. <i>ACM SOSP 2023</i>.</li>
+					<li>X. Tang, Y. Wang, T. Cao, L. Zhang, <b>Q. Chen</b>, D. Cai, Y. Liu and M. Yang. “LUT-NN: Empower Efficient Neural Network Inference with Centroid Learning and Table Lookup”. <i>ACM MobiCom 2023</i>.</li>
+					<li>Q. Zhang, S. Xu, <b>Q. Chen</b>*, G. Sui, J. Xie, Z. Cai, Y. Chen, Y. He, Y. Yang, F. Yang and M. Yang. “VBASE: Unifying Online Vector Similarity Search and Relational Queries via Relaxed Monotonicity”. <i>USENIX OSDI 2023</i>.</li>
+					<li>Z. Qiu, J. Yang, J. Zhang, C. Li, X. Ma, <b>Q. Chen</b>, M. Yang. and Y. Xu. “FrozenHot Cache: Rethinking Cache Management for Modern Hardware”. <i>EuroSys 2023</i>.</li>
+					<li>Y. Wang, Y. Hou, H. Wang, Z. Miao, S. Wu, H. Sun, <b>Q. Chen</b>, Y. Xia, C. Chi, G. Zhao, Z. Liu, X. Xie, H. Sun, W. Deng, Q. Zhang, M. Yang. “A Neural Corpus Indexer for Document Retrieval”. <i>NeurIPS 2022</i>. <b>Outstanding Paper Award</b></li>
+					<li>S. Xiao, Z. Liu, W. Han, J. Zhang, D. Lian, Y. Gong, <b>Q. Chen</b>, F. Yang, H. Sun, Y. Shao, D. Deng, Q. Zhang, and X. Xie, “Distill-VQ: Learning Retrieval Oriented Vector Quantization By Distilling Knowledge from Dense Embeddings”. <i>ACM SIGIR 2022</i>.</li>
+					<li>Y. Wang, L. Xiong, M. Zhang, H. Xue, <b>Q. Chen</b>, Y. Yang, Y. Tong, C. Huang, and B. Xu, “Heat-RL: Online Model Selection for Streaming Time-Series Anomaly Detection”. <i>CoLLAs 2022</i>.</li>
+					<li>H. Simhadri, G. Williams, M. Aumüller, M. Douze, A. Babenko, D. Baranchuk, <b>Q. Chen</b>, L. Hosseini, R. Krishnaswamny, G. Srinivasa, S. Subramanya, and J. Wang, “Results of the NeurIPS’21 Challenge on Billion-Scale Approximate Nearest Neighbor Search”. <i>Proceedings of the NeurIPS 2021 Competitions and Demonstrations Track, PMLR 176:177-189</i>.</li>
+					<li><b>Q. Chen</b>, B. Zhao, H. Wang, M. Li, C. Liu, Z. Li, M. Yang, and J. Wang, “SPANN: Highly-efficient Billion-scale Approximate Nearest Neighbor Search”. <i>NeurIPS 2021</i>. <b>Spotlight Presentation</b></li>
+					<li>X. Shan, C. Liu, Y. Xia, <b>Q. Chen</b>, Y. Zhang, K. Ding, Y. Liang, A. Luo, and Y. Luo, “GLOW: Global Weighted Self-Attention Network for Web Search”. <i>IEEE International Conference on Big Data 2021</i>.</li>
+					<li>Z. Luo, L. Zhao, W. Cheng, S. Chen, <b>Q. Chen</b>, H. Xue, H. Wang, C. Liu, M. Yang, and L. Zhang, “Match Plan Generation in Web Search with Parameterized Action Reinforcement Learning”. <i>WWW 2021</i>.</li>
+					<li>Y. Zhang, S. Setty, <b>Q. Chen</b>, L. Zhou and L. Alvisi, “Byzantine ordered consensus without Byzantine oligarchy”. <i>USENIX OSDI, 2020</i>. <b>Jay Lepreau Best Paper Award</b></li>
+					<li>C. Liang, H. Xue, M. Yang, L. Zhou, L. Zhu, Z. Li, Z. Wang, <b>Q. Chen</b>, and Q. Zhang, “AutoSys: The Design and Operation of Learning-Augmented Systems”. <i>USENIX ATC 2020</i>.</li>
+					<li>L. Sha, C. Shi, <b>Q. Chen</b>, L. Zhang and H. Wang, “Estimating Minimum Operation Steps via Memory-based Recurrent Calculation Network“, <i>IJCNN 2020</i>.</li>
+					<li>Y. Lu, Y. Shu, X. Tan, Y. Liu, M. Zhou, <b>Q. Chen</b>, and D. Pei, “Collaborative Learning of Human Behavior: An Empirical Study on Location Prediction”, <i>Proc.of the 4th ACM/IEEE Symposium on Edge Computing(SEC) 2019</i>.</li>
+					<li>C. Shi, <b>Q. Chen</b>, L. Sha, H. Xue, S. Li, H. Wang and L. Zhang. “We Know What You Will Ask: A Dialogue System for Multi-Intent Switch and Prediction”. <i>NLPCC 2019</i>.</li>
+					<li>C. Shi, <b>Q. Chen</b>, L. Sha, S. Li, X. Sun, H. Wang, and L. Zhang, “Auto-dialabel: Labeling dialogue data with unsupervised learning”. <i>EMNLP 2018</i>.</li>
+					<li>H. Liu, Z. Huang, <b>Q. Chen</b>, M. Li, Y. Fu, and L. Zhang, “Fast Clustering with Flexible Balance Constraints”. <i>IEEE International Conference on Big Data 2018</i>.</li>
+					<li><b>Q. Chen</b>, J. Yao, and Z. Xiao, “PISCES: Optimizing Multi-job Application Execution in MapReduce”. <i>IEEE Transactions on Cloud Computing (TCC) 2016</i>.</li>
+					<li>W. Song, T. Gkountouvas, K. Birman, <b>Q. Chen</b>, and Z. Xiao, “The Freeze-Frame File System”. <i>Proc. of the ACM Symposium on Cloud Computing (SoCC) 2016</i>.</li>
+					<li>C. Huang, <b>Q. Chen</b>, Z. Wang, R. Power, J. Ortiz, J. Li, and Z. Xiao, “Spartan: A distributed Array Framework with Smart Tiling”. <i>USENIX ATC 2015</i>.</li>
+					<li><b>Q. Chen</b>, J. Yao, and Z. Xiao, “LIBRA: Lightweight Data Skew Mitigation in MapReduce”. <i>IEEE Transactions on Parallel and Distributed Systems (TPDS) 2015</i>.</li>
+					<li><b>Q. Chen</b>, Y. Liao, C. Mitchell, J. Li, and Z. Xiao, “Building Scalable Multimedia Search Engine Using Infiniband”. <i>USENIX HotCloud 2014</i>.</li>
+					<li><b>Q. Chen</b>, C. Liu, and Z. Xiao, “Improving MapReduce Performance Using Smart Speculative Execution Strategy”. <i>IEEE Transactions on Computers (TC) 2014</i>.</li>
+					<li>Z. Xiao, <b>Q. Chen</b>, and H. Luo, “Automatic Scaling of Internet Applications for Cloud Computing Services”. <i>IEEE Transactions on Computers (TC) 2014</i>.</li>
+					<li>W. Song, Z. Xiao, <b>Q. Chen</b>, and H. Luo, “Adaptive Resource Provisioning for the Cloud Using Online Bin Packing”. <i>IEEE Transactions on Computers (TC) 2014</i>.</li>
+					<li>Z. Xiao, W. Song, and <b>Q. Chen</b>, “Dynamic Resource Allocation using Virtual Machines for Cloud Computing Environment”. <i>IEEE Transactions on Parallel and Distributed Systems (TPDS) 2013</i>.</li>
+					</ol>
+				</div><!-- end #page2 -->
+				
+				<!-- PAGE 3-->
+				<div class="page" id="page3">
+					<h1 class="pagetitle">Experience</h1>
+					<ul class="list-row">
+					<li><div class="title-icon"><img src="images/icon_experience1.jpg" alt="" class="alignleft" /><h3>Education</h3></div><span>
+						<table width="100%">
+							<tr>
+								<td width="20%"><b>Sep 2010 - Jun 2016</b></td>
+								<td><b>Ph.D. (expected Jan 2016), Computer Science</b></td>
+								<td><b>Peking University</b></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><I>Advisor: Zhen Xiao</I></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><I>Thesis: Building fast MapReduce-like distributed programming frameworks</I><br/><br/></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><b>Sep 2006 - Jun 2010</b></td>
+								<td><b>B.S., Computer Science</b></td>
+								<td><b>Peking University</b></td>
+							</tr>
+						</table>
+					</span></li>
+					<li><div class="title-icon"><img src="images/icon_experience.jpg" alt="" class="alignleft" /><h3>Work Experience</h3></div><span>
+                        <p><b>Dec 2023 - Now.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPrincipal Researcher in Microsoft Research Asia Vancouver. </b></p>
+                        <p><b>Jul 2016 - Dec 2023. &nbsp&nbsp&nbsp&nbspResearcher, Senior Researcher, Principal Researcher in Microsoft Research Asia Beijing. </b></p>
+						<p><b>Apr 2008 - Jun 2016. &nbsp&nbsp&nbspResearch Assistant in the Networks Lab, Peking University (Advisor: Prof. Zhen Xiao).</b></p>
+            <p><b>Sep 2013 - Aug 2014. &nbsp Visiting researcher in the System Group, New York University (Advisor: Prof. Jinyang Li).</b></p>
+						<p><b>Jun 2010 - Sep 2010. &nbsp&nbsp Intern at Infrastructure Group of Netease Youdao Company.</b></p>
+						<p><b>Apr 2008 - Oct 2009. &nbsp&nbsp&nbsp Research Intern in Education Foundation Research Project (Advisor: Prof. Zhen Xiao).</b></p>
+					</span></li>
+					</ul>
+				</div><!--  end #page3 -->
+		
+				<div class="page" id="page4">
+					<h1 calss="pagetitle">Honors & Awards</h1>
+					<ul style="width:700px;">
+                      <li>2025. <b><i>Microsoft Vancouver's Employee Recognition Nomination</b></i>. <a href="https://www.instagram.com/reel/DHeYRckTZVv/?utm_source=ig_web_copy_link">Video</a></li>
+                      <li>2024. <b><i>Best Paper Award of ENLSP@NeurIPS</b></i>.</li>
+                      <li>2022. <b><i>Outstanding Paper Award of NeurIPS</b></i>.</li>
+                      <li>2020. <b><i>Jay Lepreau Best Paper Award of OSDI</b></i>.</li>
+                      <li>2016. <b><i>Outstanding Graduates of Beijing</b></i>.</li>
+                      <li>2016. <i>Outstanding Graduates</i>, Peking University.</li>
+                      <li>2015. <i>Excellent Student Award</i>, Peking University.</li>
+                      <li>2015. <i>May Fourth Scholarship</i>, Peking University.</li>
+					  <li>2010 - 2015. <b><i>President Scholarship</b></i>, Peking University.</li>
+					  <li>2014. <i>Special Scholarship for Ph.D</i>, Peking University.</li>
+					  <li>2013. <b><i>National Scholarship</b></i>.</li>
+					  <li>2013. <b><i>Google Anita Borg Scholarship</b></i>.</li>
+					  <li>2012. <i>Sohu Scholarship</i>, Peking University.</li>
+					  <li>2011. <i>Founder Scholarship</i>, Peking University.</li>
+					  <li>2010. <b><i>Outstanding Graduates of Beijing</b></i>.</li>
+					  <li>2010. <i>Outstanding Graduates</i>, Peking University.</li>
+					  <li>2010. <i>Excellent Dissertation Award of EECS College</i>, Peking University.</li>
+					  <li>2010. <i>Excellent Paper Award of Education Foundation</i>.</li>
+					  <li>2009. <i>Yang Fuqing and Wang Yangyuan Academician Scholarship</i>, Peking University.</li>
+					  <li>2009. <i>Excellent Student Award</i>, Peking University.</li>
+					  <li>2008. <i>May Fourth Scholarship</i>, Peking University.</li>
+					  <li>2008. <i>Excellent Student Award</i>, Peking University.</li>
+					  <li>2007. <i>May Fourth Scholarship</i>, Peking University.</li>
+					  <li>2005. <i>2nd Prize in National Mathematical Olympiad in Senior in Fujian Province</i>.</li>
+					  <li>2004. <i>2nd Prize in National Olympiad in Informatics in Fujian Province</i>.</li>
+					</ul>
+				</div><!-- end #page4 -->
+				
+			</div><!-- end #maincontent-->
+			</div><!-- end #main-->
+		</div><!-- end #content-->
+		<div id="footer">
+			<hr/>
+			<div id="copyright">Qi Chen © Copyright 2025.</div>
+		</div><!-- end #footer-->
+	</div><!-- end #container-->
+</div><!-- end #wrapper-->
+
+<script type="text/javascript"> Cufon.now(); Cufon.refresh(); </script> <!-- to fix cufon problems in IE browser -->
+
+</body>
+</html>
+
